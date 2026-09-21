@@ -20,7 +20,7 @@ class TestLayout(BoxLayout):
         self.add_widget(self.btn)
         self.add_widget(self.result)
 
-    def test_smb(self, *args)
+    def test_smb(self, *args):
 
         try:
 
