@@ -10,7 +10,7 @@ class TestLayout(BoxLayout):
 
     def __init__(self, **kwargs):
 
-        super().__init(orientatio="vertical", **kwargs)
+        super().__init(orientation="vertical", **kwargs)
 
         self.result = Label(text="대기중")
         self.btn = Button(text="SMB TEST", size_hint_y=0.2)
@@ -32,7 +32,7 @@ class TestLayout(BoxLayout):
    	      use_ntlm_v2=True
             )
 
-            connected = conn.connect("10.29.10.43", 445)
+            connected = conn.connect("10.29.10.40", 445)
 
             if connected:
                 self.result.text = "연결 성공"
