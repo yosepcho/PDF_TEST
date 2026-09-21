@@ -3,26 +3,45 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 
-from plyer import filechooser
+from smb.SMBConnection import SMBConnection
+
 
 class TestLayout(BoxLayout):
+
     def __init__(self, **kwargs):
-        super().__init__(orientation="vertical", **kwars)
-        self.btn = button(text="PDF 선택", size_hint_y=0.2)
-        self.btn.bind(on_press=self.select_pdf)
-        self.label = Label(text="선택된 파일 없음")
+
+        super().__init(orientatio="vertical", **kwargs)
+
+        self.result = Label(text="대기중")
+        self.btn = Button(text="SMB TEST", size_hint_y=0.2)
+
+        self.btn.bind(on_press=self.test_smb)
+
         self.add_widget(self.btn)
-        self.add_widget(self.label)
+        self.add_widget(self.result)
 
-    def select_pdf(self, *args):
-        filechooser.open_file(filters=["*.pdf"],on_selection=self.on_selected)
-    def on_selected(self, selection):
-        if selection:
-            self.label.text = selection[0]
-            print("선택 파일:", selection[0])
+    def test_smb(self, *args)
 
-class PdfTestApp(App):
+        try:
+
+            conn = SMBConnection(
+   	      "ldr",
+	      "Dustpno1!",
+                    "tablet",
+    	      "nas",
+   	      use_ntlm_v2=True
+            )
+
+            connected = conn.connect("10.29.10.43", 445)
+
+            if connected:
+                self.result.text = "연결 성공"
+            else:
+                self.result.text = "연결 실패"
+        except Exception as e:
+            self.result.text = str(e)
+
+class TestApp(App):
     def build(self):
         return TestLayout()
-
-PdfTestApp().run()
+TestApp().run()

@@ -4,9 +4,9 @@
 # 기본 정보
 # ============================================
 
-title = LDR Template
+title = parse-PDF
 
-package.name = ldrtemplate
+package.name = parsePDF
 package.domain = org.ldr
 source.dir = .
 
@@ -17,13 +17,12 @@ source.dir = .
 source.include_exts = py,png,jpg,jpeg,ttf,atlas,json
 
 # 포함할 폴더 (없으면 무시됨)
-source.include_patterns = assets/*,core/*
 
 # 제외
 source.exclude_dirs = tests,bin,.buildozer,__pycache__,sample,.github
 source.exclude_patterns = *.txt,license,buildozer.spec
 
-version = 1.2
+version = 0.1
 
 
 # ============================================
@@ -51,7 +50,7 @@ fullscreen = 0
 #   MANAGE_EXTERNAL_STORAGE : Android 11+ 에서 Download 직접 읽기
 #   READ/WRITE              : Android 10 이하 호환
 #   (쉼표 뒤 공백 없이 작성)
-android.permissions = MANAGE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,READ_MEDIA_IMAGES,READ_MEDIA_VIDEO,READ_MEDIA_AUDIO
+android.permissions = MANAGE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 # 타깃 API
 android.api = 33
@@ -81,7 +80,7 @@ android.accept_sdk_license = True
 #   "어제 성공 / 오늘 실패" 가 발생함.
 #   미지정 시 buildozer 1.5.0 이 검증된 안정 릴리스를 사용.
 
-requirements = python3==3.11.0,kivy==2.3.0,pyjnius,android,pysmb,plyer
+requirements = python3==3.11.0,kivy==2.3.0,pyjnius,pysmb
 p4a.url = https://github.com/kivy/python-for-android.git
 p4a.branch = release-2024.01.21
 
