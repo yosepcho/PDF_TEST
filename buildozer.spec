@@ -50,7 +50,7 @@ fullscreen = 0
 #   MANAGE_EXTERNAL_STORAGE : Android 11+ 에서 Download 직접 읽기
 #   READ/WRITE              : Android 10 이하 호환
 #   (쉼표 뒤 공백 없이 작성)
-android.permissions = MANAGE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
+android.permissions =INTERNET,MANAGE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
 # 타깃 API
 android.api = 33
